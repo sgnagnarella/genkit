@@ -176,6 +176,10 @@ export class Registry {
 
   constructor(public parent?: Registry) {}
 
+  static withCurrent() {
+    return new Registry(getRegistryInstance());
+  }
+
   static withParent(parent: Registry) {
     return new Registry(parent);
   }
@@ -336,6 +340,6 @@ export function runWithRegistry<O>(registry: Registry, fn: () => O): O {
  *  - if running within `runWithRegistry` then return that registry
  *  - else return the global registry.
  */
-export function getRegistryInstance(): Registry {
+function getRegistryInstance(): Registry {
   return registryAls.getStore() || global[REGISTRY_KEY];
 }
