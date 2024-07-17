@@ -230,7 +230,8 @@ export class Registry {
 
   async lookupTraceStore(env: string): Promise<TraceStore | undefined> {
     return (
-      (await this._lookupTraceStore(env)) || this.parent?.lookupTraceStore(env)
+      (await this.lookupOverlaidTraceStore(env)) ||
+      this.parent?.lookupTraceStore(env)
     );
   }
 
@@ -258,7 +259,7 @@ export class Registry {
 
   async lookupFlowStateStore(env: string): Promise<FlowStateStore | undefined> {
     return (
-      (await this._lookupFlowStateStore(env)) ||
+      (await this.lookupOverlaidFlowStateStore(env)) ||
       this.parent?.lookupFlowStateStore(env)
     );
   }
