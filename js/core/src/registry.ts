@@ -234,7 +234,7 @@ export class Registry {
     );
   }
 
-  private async _lookupTraceStore(
+  private async lookupOverlaidTraceStore(
     env: string
   ): Promise<TraceStore | undefined> {
     if (!this.traceStoresByEnv[env]) {
