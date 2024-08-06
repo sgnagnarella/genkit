@@ -101,6 +101,7 @@ Take a look at some samples of Genkit in use:
 - [Restaurant menu Q&A app](samples/js-menu/) -- this sample shows progressively
   more sophisticated versions of a menu understanding app.
 - [Streaming to an Angular frontend](samples/js-angular/)
+- [Compass AI Travel Planning](https://github.com/FirebaseExtended/compass-ai-travel-planning-sample-flutter) -- AI Powered travel agent demo using Firebase Data Connect and Genkit. 
 
 ## Connect with us
 
